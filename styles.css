@@ -1,0 +1,22 @@
+body {
+  background: #000000;
+  color: #fff5e6;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  color: #3e4f52;
+}
+
+h2 {
+  color: #9355f7;
+}
+
+.tarea {
+  background: #0c1626;
+  border: 1px solid #3f521c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
