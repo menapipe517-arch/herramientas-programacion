@@ -1,1 +1,37 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Interactivo</title>
+  <style>
+    body { background: #050b14; color: white; font-family: Arial, sans-serif; text-align: center; padding-top: 30px; }
+    .controls { background: #0c1626; border: 1px solid #1c3252; display: inline-block; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-size: 14px; }
+    .card { width: 300px; padding: 20px; margin: 20px auto; border: 1px solid #1c3252; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #0c1626; box-sizing: border-box; transition: all 0.2s; }
+    .btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 30px; background: linear-gradient(135deg, #22d3ee, #a855f7); color: #000; font-weight: 700; cursor: pointer; }
+    .btn:hover { box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); transform: translateY(-2px); }
+    p { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>Aplicación del Box Model</h1>
+  <div class="controls" oninput="update()">
+    <label>Padding: <input type="range" id="p" min="5" max="50" value="20"></label>
+    <label>Margin: <input type="range" id="m" min="0" max="60" value="20"></label>
+    <label>Borde: <input type="range" id="b" min="1" max="10" value="1"></label>
+  </div>
+  <div class="card" id="card">
+    <h2>Mi tarjeta</h2>
+    <p>Esta tarjeta utiliza el Box Model de CSS: contenido, padding, border y margin.</p>
+    <button class="btn">Ver más</button>
+  </div>
+  <p id="info">Tamaño actual de Padding: 20px | Margin: 20px | Borde: 1px</p>
+  <script>
+    function update() {
+      const p = document.getElementById('p').value, m = document.getElementById('m').value, b = document.getElementById('b').value;
+      const c = document.getElementById('card').style;
+      c.padding = p + 'px'; c.margin = m + 'px auto'; c.borderWidth = b + 'px';
+      document.getElementById('info').textContent = `Tamaño actual de Padding: ${p}px | Margin: ${m}px | Borde: ${b}px`;
+    }
+  </script>
+</body>
+</html>
